@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #myForm{
+            float: right;
+        }
+        #green{
+            width:200px;
+            height:100px;
+            background: seagreen;
+
+            position:relative;
+            border-width: 20px 10px 20px 40px;
+            border-style:ridge solid dotted dashed;
+            border-color:red #fccccc #2fffee #666666;
+
+        }
+        #purple{
+            width:100px;
+            height: 100px;
+            background: purple;
+            position:relative;
+            border:5px black solid;
+            text-align: right;
+
+
+
+        }
+        #pink{
+            width:100px;
+            height: 100px;
+            background: pink;
+            border-radius: 50px;
+        }
+        div>.box{
+            font-size: 10px;
+            padding:0;
+            margin:0;
+            float:left;
+
+        }
+        .box{
+            display:inline-block;
+
+        }
+        .box > p{
+            font: italic bold 5px Arial, serif;
+            color:green
+
+        }
+        a{
+            text-decoration: none;
+        }
+        #purple >p{
+            font-size: 10px;
+        }
+        a:visited{
+            color:green;
+        }
+        a:hover{
+            font-size: 20px;
+        }
+
+        /*div{
+            display: inline-block;
+        }*/
+    </style>
+</head>
+<body>
+<div id="box">
+    <a name="top"></a>
+    <div class='box'id="purple"><p>This is a purple box.This is a purple box.This is a purple box.This is a purple box.This is a purple box.This is a purple box.This is a purple box.This is a purple box.This is a purple box.This is a purple box.</p></div>
+    <div class='box'id="green"><p>This is a green box.</p></div>
+    <div class='box'id="pink"><p> This is a pink box.</p></div>
+    </div>
+<div>
+    <form id="myForm">
+
+<p>type in your email
+<input type="email" size=50 placeholder="email needs to include @..." name="email"></p>
+    <p>This is my text</p><textarea id="textContent" size="200" name="textContent"></textarea>
+<br>
+    <p>Please choose one of the follow option.</p>
+<select id="food" name="food">
+    <option>chocolate</option>
+    <option>strawberry</option>
+    <option>candy</option>
+    <option>cookies</option>
+</select>
+<br>
+<label for="male">Male</label>
+<input type="radio" name="gender" id="male" value="m">
+<label for="female">Female</label>
+<input type="radio" name="gender" id="female" value="f">
+<br>
+<input type="checkbox" id="dog" name="dog" value="1">Dog
+<input type="checkbox" id="cat" name="cat" value="2">Cat
+<input type="checkbox" id="fish" name="fish" value="3">Fish
+<br>
+<br>
+<input type="submit" value="Click Me!">
+
+
+
+</form>
+    <p><a href="http://www.google.com">google</a></p>
+    <p><a href="jqueryPractice.html" target="_blank">inner link</a></p>
+    <p><a href="#top">to top</a></p>
+
+    <table>
+        <tr><th>Name</th><th>age</th><th>gender</th></tr>
+        <tr><td>Bob</td><td>33</td><td>Male</td></tr>
+        <tr><td>Kate</td><td>33</td><td></td>Female</td></tr>
+        <tr><td colspan="2">mary</td><td>female</td> </tr>
+    </table>
+</div>
+</body>
+</html>

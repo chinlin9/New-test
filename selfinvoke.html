@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var add=(function(){
+        var counter =0;
+        return function(){
+            return counter++;
+        }
+
+    }());
+    console.log(add());
+    console.log(add());
+    console.log(add());
+</script>
+
+
+</body>
+</html>

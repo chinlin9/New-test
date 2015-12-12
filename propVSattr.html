@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+   <style>
+       td{
+           width:100px;
+           height: 100px;
+           border:1px solid white;
+           background-color: khaki;
+       }
+   </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
+
+</head>
+<body>
+
+<form>
+    <input type="checkbox" checked="checked" id="checkbx"/>
+    <span>Check/uncheck</span>
+    <input type="reset" id="reset" value="reset"/>
+    <button type="button" id="submit">Submit</button>
+
+    <table>
+        <tr>
+            <td>checked</td><td id="ch">true</td>
+        </tr>
+        <tr>
+            <td>default checked</td><td id="de">true</td>
+        </tr>
+        <tr>
+            <td>getAttribute("checked")</td><td id="at">true</td>
+        </tr>
+    </table>
+</form>
+<script>
+    $("#reset").click(function(){
+
+        $("#checkbx").prop("checked",false);
+        $("#ch").html("false");
+        $("#de").html("true");
+        $("#at").html("checked");
+
+    });
+    $("#submit").click(function(){
+           $("#checkbx").prop("checked",true);
+           $("#ch").html($("#checkbx").prop("checked"));
+           $("#de").html("true");
+           $("#at").html("checked");
+
+
+
+       });
+    $("#checkbx").change(function(){
+
+        if($("#checkbx").prop("checked")){
+
+            $("#ch").html("true");
+
+        }else{
+            $("#ch").html("false");
+        }
+
+    });
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BBC Clone</title>
+    <style>
+        body{
+            margin:0;
+        }
+        #container{
+            font-family: Arial, Helvetica, freesans, sans-serif;
+        }
+        #topbar{
+            background-color:#700001;
+            width:100%;
+            height:45px;
+            color:#ffffff;
+
+        }
+        .fixwidth{
+            width:800px;
+            margin:0 auto;
+            background-color: blue;
+            display: inline;
+
+
+
+        }
+        .fixwidth>div{
+            float:left;
+        }
+
+        #logo{
+            width:80px;
+
+
+        }
+        #logodiv{
+
+            padding:10px;
+            float:left;
+            padding-left: 50px;
+
+            border-right:#700001;
+
+
+        }
+        #signin{
+            margin:10px;
+
+            width:20px;
+            vertical-align:middle;
+        }
+        #signinDiv{
+            width:200px;
+            height:45px;
+
+            float:left;
+            margin-top: 0;
+            font-family: Arial,Helvetica,freesans,sans-serif;
+            font-size: 1em;
+            border-right:2px solid #870A0A;
+
+
+        }
+        #topmenuDiv{
+            padding-top:0;
+            margin:0;
+
+        }
+        ul{
+            padding:0;
+            margin:0;
+        }
+
+        #topmenuDiv li{
+            padding-top: 18px;
+            margin-top:0;
+            float:left;
+            width:80px;
+            height:26px;
+            font-family: Arial,Helvetica,freesans,sans-serif;
+            list-style-type: none;
+            border-right:2px solid #870A0A;
+            text-align: center;
+            vertical-align: middle;
+        }
+        #searchdiv >input{
+            font-size: 0.9em ;
+            padding: 5px 0 0 10px;
+            margin-top:0;
+            background-image: url("img/searchicon.png");
+            background-repeat: no-repeat;
+            background-size:20px;
+            background-position:right;
+        }
+        #topmenuDiv li:hover{
+            background-color: #7C7575;
+
+
+        }
+        #searchdiv{
+            padding-top:8px;
+
+
+            margin-left: 20px;
+        }
+        .break{
+            clear:both;
+
+        }
+        #newsbar{
+            background-color:#B21010 ;
+            margin-top:-2px;
+            padding:0;
+
+            height:121px;
+
+        }
+        #newsbar >.news{
+            float:left;
+            vertical-align: bottom;
+            padding-bottom:21.44px;
+            margin-right:30px;
+        }
+        h3{
+            margin-top:30px;
+        }
+        #rssDiv{
+            float:right;
+            margin-top:20px;
+            margin-right:20px;
+        }
+        #topicmenu{
+            height:20px;
+            width:830px;
+            background-color: #444242;
+            padding:0;
+            margin:0;
+            margin-left:100px;
+
+        }
+        #topicmenu li{
+            height:16px;
+
+            float:left;
+            color:white;
+            font-family: Arial,Helvetica,freesans,sans-serif;
+            font-size: 0.7em;
+            border-right:1px solid white;
+            padding:3px 5px 0px 5px;
+            margin-bottom: 0px;
+
+            list-style-type: none;
+            text-align:center;
+            vertical-align: middle;
+        }
+        #topicmenu li:hover{
+
+            color:red;
+            background-color: white;
+        }
+        #newsbar h1, h3{
+            font-family: Arial,Helvetica,freesans,sans-serif;
+            color: #ffffff;
+        }
+        #content{
+
+
+
+            font-size:0.8em;
+
+
+
+        }
+        #leftNews{
+            width:60%;
+
+            position:relative;
+            float:left;
+            left:100px;
+
+        }
+        #leftNews p{
+            font-family: Arial, Helvetica, freesans, sans-serif;
+        }
+        span{
+            font-weight: bold;
+        }
+        #content h1{
+            color:darkblue;
+
+        }
+        a{
+            text-decoration: none;
+        }
+        #newsImg{
+            width:70%;
+        }
+        .newsContent{
+            float: left;
+            width:180px;
+        }
+
+        .newsitem{
+            float: right;
+            margin-left:20px;
+            width:25%;
+            text-decoration: none;
+
+
+
+        }
+        .newsitem p{
+            text-alignment:justify;
+        }
+        .video{
+            background-image: url("img/video.png");
+            background-repeat: no-repeat;
+            background-size:20px;
+            background-position:left;
+            padding: 8px 0 2px 25px;
+            line-height: 150%;
+
+        }
+        .sound{
+            background-image: url("img/sound.png");
+            background-repeat: no-repeat;
+            background-size:20px;
+            background-position:left;
+            padding-left: 30px;
+
+        }
+        .newsitem a:visited{
+            color:black;
+        }
+        .newsitem a:hover{
+            color:darkred;
+
+
+        }
+        #newstext{
+            margin-top :0 ;
+        }
+        #watchListen{
+
+            float:right;
+            width: 30%;
+            height:200px;
+            background-color:lightgray;
+            position:relative;
+            margin:2%;
+
+        }
+        #watchListen h2{
+            color:gray;
+            margin-top: 0px;
+            padding:10px;
+        }
+        #box{
+            float:right;
+        }
+        #watchListen li{
+            height:40px;
+            list-style-type: none;
+            text-decoration: none;
+            padding-left:20px;
+           border-top:1px solid white;
+            font-size: 1.5em;
+            vertical-align: middle;
+            padding-top: 10px;
+        }
+        #watchListen ul{
+
+            list-style-image: square url("img/live.png");
+            padding:0;
+        }
+        #watchListen li{
+            background-image: url("img/live.png");
+            background-repeat: no-repeat;
+            background-size:20px;
+            background-position:left;
+            padding: 8px 0 2px 25px;
+            line-height: 150%;
+
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="topbar">
+        <div class="fixwidth">
+            <div id="logodiv"><img id="logo"src="img/bbclogo.png"/>
+                </div>
+            <div id="signinDiv">
+                <img id="signin" src="img/signup.png"/>  Sign In
+
+            </div>
+            <div id="topmenuDiv">
+                <ul>
+                    <li>News</li>
+                    <li>Sport</li>
+                    <li>Weather</li>
+                    <li>IPlayer</li>
+                    <li>TV</li>
+                    <li>Radio</li>
+                    <li>More...</li>
+                </ul>
+
+            </div>
+            <div id="searchdiv">
+                <input type="text" size="15" placeholder="Search...">
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+    <div class="break"></div>
+    <div id="newsbar">
+        <h1 class="news">News    </h1>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<h3 class="news">US</h3>
+        <div id='rssDiv'><img src="img/rss.png" /></div>
+        <div class="break"></div>
+        <div id="topicmenu">
+            <ul>
+                <li>Home</li>
+                <li>World</li>
+                <li>UK</li>
+                <li>England</li>
+                <li>N. England</li>
+                <li>Scotland</li>
+                <li>Wales</li>
+                <li>Business</li>
+                <li>Politics</li>
+                <li>Health</li>
+                <li>Education</li>
+                <li>SocialEnvironment</li>
+                <li>Technology</li>
+                <li>Entertainment & Arts</li>
+            </ul>
+        </div>
+    </div>
+    <div class="break"></div>
+
+    <div id="content">
+        <div id="leftNews">
+        <p><span>2 April 2014</span>, Last Updated at 15:23</p>
+            <a href="#"><h1>Pollution to spread across England</h1></a>
+            <img id="newsImg" class="newsContent" src="img/newImg.png"/>
+            <div class="newsitem">
+
+                <p id="newstext" class="newsContent">Royal Bank of Scotland and Standard Chartered were the weakest of Britain's seven largest lenders in a Bank of England stress test.</p><br>
+                <a class="video" href="http://google.com">Why are pollution levels so high?</a><br>
+                <a class="video" href="http://yahoo.com">nutcracker is a very good show</a><br>
+                <a class="video" href="form.html">I would ike to see it on Mountain View Center</a><br>
+                <a class="sound" href="form.html">get Music</a><br>
+
+
+            </div>
+        </div>
+        <div id="watchListen">
+            <img id="box" src="img/box.png"/>
+            <h2>Watch Listen</h2>
+            <ul>
+                <li><a>BBC News Channel</a></li>
+                <li><a>Radio 5 live </a></li>
+                <li><a>Osborne Questioned on Board</a></li>
+
+
+            </ul>
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+</body>
+</html>

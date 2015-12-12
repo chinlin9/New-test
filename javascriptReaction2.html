@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style>
+        #square{
+            background-color: #ffffff;
+            width:700px;
+            height: 700px;
+
+
+        }
+        div{
+            background-color: #ffffff;
+
+        }
+        body{
+            padding:0;
+            border: 0;
+
+        }
+    </style>
+
+</head>
+<body>
+
+
+<p>Your Time</p>
+<p id="myTime"></p>
+<div >
+    <svg  id="square"  width="400" height="110">
+    </svg>
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script>
+
+
+    $(document).ready(function(){
+        var ele = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        console.log(ele);
+
+        $("svg").append(ele);
+        $shape=$(ele);
+
+
+
+        $shape.html("A")
+                .attr("cx",30)
+                .attr("cy",30)
+                .attr("radius",50);
+
+
+
+
+    });
+
+
+</script>
+</body>
+</html>

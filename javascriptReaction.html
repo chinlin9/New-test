@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style>
+        #square{
+            background-color: #ffffff;
+            width:700px;
+            height: 700px;
+
+
+        }
+        div{
+            background-color: #ffffff;
+
+        }
+        body{
+            padding:0;
+            border: 0;
+
+        }
+    </style>
+
+</head>
+<body>
+
+
+<p>Your Time</p>
+<p id="myTime"></p>
+<div >
+    <svg  id="square"  width="400" height="110">
+    </svg>
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script>
+
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF'.split('');
+        var color = '#';
+        for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+    //setTimeout(getRandomColor, 200);
+
+    var square = function(_cx, _cy){
+        var radius=20;
+
+        var cx=_cx;
+        var cy=_cy;
+        this.getCx = function(){
+            return cx;
+        }
+        this.setPosition = function(){
+            cx = Math.floor(Math.random()*700);
+            cy = Math.floor(Math.random()*700);
+
+        }
+        this.getRadius = function(){
+            return radius;
+        }
+        this.draw = function(){
+            var ele = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            $("svg").append(ele);
+            $shape=$(ele);
+
+
+
+            $shape.html("A")
+                    .attr("cx",cx)
+                    .attr("cy",cy)
+                    .attr("radius",50)
+                    .attr("stroke-width",200)
+                    .attr("stroke", "#000000")
+                    .attr("fill", " #ffeeff");
+
+
+
+            return $shape;
+        };
+
+
+
+    };
+    $(document).ready(function(){
+       var image = new square(0,0);
+        console.log(image.getCx());
+        image.draw();
+        console.log(image.getRadius());
+        image.draw();
+        $("body").on("click", "#quantity", function () {
+            changeAmount();
+        });
+
+    });
+
+
+</script>
+</body>
+</html>

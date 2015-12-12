@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    #drawcircle{
+    width:100px; height:100px; background-color:green; border-radius:50px;
+
+    }
+
+    </style>
+</head>
+<body>
+<div>
+    <button id="changeText">Change Text</button>
+    <div id="firstdiv">This is some div</div>
+    <button id="appendtext">Append</button>
+    <div id="append"></div>
+    <button id="create">create</button>
+    <div id="add"></div>
+    <button id="toggle">toggle</button>
+    <div id="drawcircle"></div>
+    <button id="getInput">getInput</button>
+
+    <input id="myInput" type="text"/>
+    <p id="showText">111</p>
+    <p>How many fingers?<input type="number" id="guessNum" min="0" max="5"></p>
+    <button id="guessbtn">guess</button>
+
+</div>
+<script>
+    var newArray=["apple", "banana", "pineapple","guava","cherry"];
+    document.getElementById("changeText").onclick =function(){
+        document.getElementById("firstdiv").innerHTML="hello";
+
+
+    };
+    document.getElementById("appendtext").onclick =function(){
+        document.getElementById("append").innerHTML= document.getElementById("append").innerHTML+" great";
+
+
+    };
+    document.getElementById("create").onclick =function(){
+        document.getElementById("add").innerHTML= document.getElementById("append").innerHTML+" <ul><li>book</li><li>tools</li></ul>";
+
+
+    };
+    document.getElementById("toggle").onclick =function(){
+        document.getElementById("drawcircle").style.display = "none";
+    };
+
+    document.getElementById("getInput").onclick =function(){
+
+        newArray.push("grapes");
+        newArray.splice(2, 1, "kiwi","mango");
+        console.log(newArray.toString());
+
+        document.getElementById("showText").innerHTML= newArray[0];
+
+
+    };
+    document.getElementById("guessbtn").onclick=function(){
+        var guessed = 0;
+        var ran = 0;
+        var gotit = false;
+        var timesofguess=1;
+
+
+
+            ran = Math.random() * 6;
+            ran = Math.floor(ran);
+            ran = parseInt(ran);
+            ran = 3;
+
+            console.log("ran" + ran + " " + typeof ran);
+
+            guessed = document.getElementById("guessNum").value;
+
+            console.log("guessed" + guessed + " " + typeof guessed);
+            if (guessed == ran) {
+                console.log("you win!!");
+                gotit = true;
+            } else {
+                console.log("you lose!!");
+            }
+            timesofguess++;
+
+    }
+
+//"style", "width:100px; height:100px; background-color:green; border-radius:50px;");
+
+</script>
+</body>
+</html>
